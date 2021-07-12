@@ -1,16 +1,23 @@
 import "./App.scss";
+import { Switch, Route } from "react-router-dom";
+
+// Pages
+import Home from "./pages/Home";
+import Boards from "./pages/Boards";
+import DidNotFoundPage from "./pages/DidNotFoundPage";
+
+// Components
+import Header from "./components/Header.component";
 
 const App = () => {
     return (
         <div className="App">
-            <header className="App-header">
-                <h1>Soon..</h1>
-                <img
-                    src="https://i.pinimg.com/originals/71/fa/7b/71fa7ba371469361f612b8e5fc9ef80d.png"
-                    style={{ height: "400px" }}
-                    alt="logo"
-                />
-            </header>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/boards/:boardName" component={Boards} />
+                <Route exact path="*" component={DidNotFoundPage} />
+            </Switch>
         </div>
     );
 };
