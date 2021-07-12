@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "test": "CI=true react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write",
@@ -46,12 +46,11 @@
     "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.2",
-    "pre-commit": "test"
+    "prettier": "^2.3.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run lint:fix && npm run prettier format && ci=true npm run test"
+      "pre-commit": "lint-staged && npm run lint:fix && npm run prettier format && npm run test"
     }
   },
   "lint-staged": {
