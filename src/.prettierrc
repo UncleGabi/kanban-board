@@ -3,6 +3,5 @@
     "singleQuote": false,
     "semi": true,
     "endOfLine": "crlf",
-    "trailingComma": "es5",
-    "no-unused-vars": "error"
+    "trailingComma": "es5"
 }
