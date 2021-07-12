@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --findRelatedTests --watchAll=false",
+    "test": "CI=true react-scripts test --findRelatedTests",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write",
