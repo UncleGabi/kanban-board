@@ -1,22 +1,10 @@
-# We give a name to our workflow
 name: learn-github-actions
-
-# We determine what triggers our worklow
-# In this example it's push
 on: [push]
-
 jobs:
-  # within the workflow a job is configured called test
-  # code below runs the test
   check-bats-version:
     runs-on: ubuntu-latest
-
-    # actions/ lines are necessary for github to even run the workflows
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-
-      - name: Install
-        run: npm install -g bats # installs the bat software testing package
-      - name: Run
-        run: bats -v # runs the bats command that that outputs the software version
+      - run: npm install -g bats
+      - run: bats -v
