@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
 
-      # - name: Install
-      #  run: npm install => needed for the test to run (if it's not yet installed)
+      - name: Install
+        run: npm install # needed for the test to run
       - name: Test
         run: npm test # it will actually run the test
