@@ -31,22 +31,6 @@
                     ".jsx"
                 ]
             }
-        ],
-        "indent": [
-            2,
-            4
-        ],
-        "linebreak-style": [
-            2,
-            "windows"
-        ],
-        "quotes": [
-            2,
-            "double"
-        ],
-        "semi": [
-            2,
-            "always"
         ]
     }
 }
