@@ -3,23 +3,3 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-ul {
-    height: 50px;
-    width: 100vw;
-    background-color: tomato;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-
-    li {
-        margin: 5px 15px;
-        list-style-type: none;
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-    }
-}

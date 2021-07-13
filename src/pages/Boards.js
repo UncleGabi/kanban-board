@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useHistory, useLocation } from "react-router";
 
-function Boards() {
+const Boards = () => {
     const { boardName } = useParams();
     const history = useHistory();
     const location = useLocation();
@@ -37,6 +37,6 @@ function Boards() {
             </button>
         </div>
     );
-}
+};
 
 export default Boards;
