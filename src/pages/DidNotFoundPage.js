@@ -9,6 +9,7 @@ const DidNotFoundPage = () => {
     return (
         <div
             style={{
+                // to variable
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

@@ -1,10 +1,23 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  run_npm_build:
     runs-on: ubuntu-latest
-    steps:
+    steps: npm build
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: npm install
       - run: npm build
+
+  run_npm_test:
+    runs-on: ubuntu-latest
+    steps: npm test
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm test
+
+  check_eslint:
+    runs-on: ubuntu-latest
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm lint
