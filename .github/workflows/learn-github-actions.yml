@@ -18,15 +18,17 @@ jobs:
       - run: npm test
 
   eslint_check:
-    name: Prepare action
+    name: Run ESLint
     runs-on: ubuntu-latest
     steps:
-      # Checkout action must run prior to eslint check
-      - name: Checkout 
-        uses: actions/checkout@v1
-      - name: Lint
-        uses: Krizzu/eslint-check-action@v1.1.0
-        with:
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
-          eslintConfig: "../eslint.config.js",
-          eslintExt: "js, jsx"
+      # Check out the repository
+      - uses: actions/checkout@v2
+
+      # Install Node.js
+      - uses: actions/setup-node@v2
+
+      # Install your dependencies
+      - run: npm ci
+
+      # Run ESLint
+      - uses: eslint/github-action@v0
