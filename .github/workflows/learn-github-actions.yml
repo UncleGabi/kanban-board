@@ -1,13 +1,5 @@
 name: learn-github-actions
-on:
-  push:
-    branches:
-      - master
-      - newFeature
-
-  pull_request:
-    branches:
-      - newFeature
+on: pull_request
 
 jobs:
   run_npm_build:
