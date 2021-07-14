@@ -4,7 +4,9 @@ const Home = () => {
             className="home"
             style={{ textAlign: "center", marginTop: "200px" }}
         >
-            <h1>Welcome to my Kanban App!</h1>
+            <div>
+                <h1>Welcome to my Kanban App!</h1>
+            </div>
         </div>
     );
 };
