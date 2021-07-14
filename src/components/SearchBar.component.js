@@ -1,7 +1,16 @@
 /* eslint-disable react/prop-types */
 import "./SearchBar.styles.scss";
 
-const SearchBar = ({ handleChange, value }) => {
+import { useState } from "react";
+
+const SearchBar = () => {
+    const [text, setText] = useState("");
+
+    const handleChange = (e) => {
+        const { value } = e.target;
+        setText(value);
+    };
+
     return (
         <div className="search-bar">
             <input
@@ -9,9 +18,7 @@ const SearchBar = ({ handleChange, value }) => {
                 className="form-input"
                 type="search"
             />
-            <label
-                className={`${value.length ? "shrinkLabel" : ""} form-label`}
-            >
+            <label className={`${text.length ? "shrinkLabel" : ""} form-label`}>
                 Search
             </label>
         </div>
