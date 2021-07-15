@@ -1,11 +1,10 @@
 import "./BoardCard.styles.scss";
 import PropTypes from "prop-types";
 
-const BoardCard = ({ name, assignedTo, dueDate }) => {
+const BoardCard = ({ name, dueDate }) => {
     return (
         <div className="board-card">
             <h2>{name}</h2>
-            <h3>{assignedTo}</h3>
             <p>{dueDate}</p>
         </div>
     );
@@ -13,7 +12,6 @@ const BoardCard = ({ name, assignedTo, dueDate }) => {
 
 BoardCard.propTypes = {
     name: PropTypes.string,
-    assignedTo: PropTypes.string,
     dueDate: PropTypes.string,
 };
 

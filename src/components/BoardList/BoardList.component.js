@@ -20,15 +20,8 @@ const BoardList = () => {
 
             <div className="board-list">
                 {boards.map((board) => {
-                    const { id, name, assignedTo, dueDate } = board;
-                    return (
-                        <BoardCard
-                            key={id}
-                            name={name}
-                            assignedTo={assignedTo}
-                            dueDate={dueDate}
-                        />
-                    );
+                    const { id, name, dueDate } = board;
+                    return <BoardCard key={id} name={name} dueDate={dueDate} />;
                 })}
             </div>
         </div>
