@@ -1,9 +1,9 @@
-import "./Board.styles.scss";
+import "./BoardCard.styles.scss";
 import PropTypes from "prop-types";
 
-const Board = ({ name, assignedTo, dueDate }) => {
+const BoardCard = ({ name, assignedTo, dueDate }) => {
     return (
-        <div className="board">
+        <div className="board-card">
             <h2>{name}</h2>
             <h3>{assignedTo}</h3>
             <p>{dueDate}</p>
@@ -11,10 +11,10 @@ const Board = ({ name, assignedTo, dueDate }) => {
     );
 };
 
-Board.propTypes = {
+BoardCard.propTypes = {
     name: PropTypes.string,
     assignedTo: PropTypes.string,
     dueDate: PropTypes.string,
 };
 
-export default Board;
+export default BoardCard;

@@ -1,16 +1,21 @@
-.board-container {
-    width: 90%;
-    margin: 30px auto;
+.board-page {
+    max-width: 1400px;
+    margin: 30px 40px 20px 80px;
 
     .add-button {
         padding: 20px 60px;
     }
 
-    .boards {
+    .board-list {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
         margin: 50px auto;
         width: 73%;
+    }
+
+    .button-style {
+        float: right;
+        margin-right: 30px;
     }
 }
