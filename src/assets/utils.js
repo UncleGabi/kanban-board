@@ -1,6 +1,7 @@
 import { boardData } from "../assets/boards";
 
 export const setBoardStorage = (data) => {
+    // try - catch(??)
     localStorage.setItem("boards", JSON.stringify(data));
 };
 

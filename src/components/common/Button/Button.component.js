@@ -1,10 +1,10 @@
-import "./Button.styles.scss";
 import PropTypes from "prop-types";
+import "./Button.styles.scss";
 
-const Button = ({ text, button_style, handleClick }) => {
+const Button = ({ text, classes, handleClick }) => {
     return (
         <div>
-            <button onClick={handleClick} style={button_style}>
+            <button onClick={handleClick} className={`${classes} button`}>
                 {text}
             </button>
         </div>
@@ -13,8 +13,8 @@ const Button = ({ text, button_style, handleClick }) => {
 
 Button.propTypes = {
     text: PropTypes.string,
-    button_style: PropTypes.instanceOf(Object),
     handleClick: PropTypes.func,
+    classes: PropTypes.string,
 };
 
 export default Button;
