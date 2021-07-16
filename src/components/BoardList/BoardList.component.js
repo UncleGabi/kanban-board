@@ -8,7 +8,7 @@ import { getBoardStorage } from "../../assets/utils";
 import { useState, useEffect } from "react";
 
 const BoardList = () => {
-    const [boards, setBoards] = useState();
+    const [boards, setBoards] = useState([]);
 
     useEffect(() => {
         try {
@@ -16,7 +16,6 @@ const BoardList = () => {
                 const res = await JSON.parse(getBoardStorage());
                 setBoards(res);
             };
-
             getBoardData();
         } catch (error) {
             console.log(error.message);
