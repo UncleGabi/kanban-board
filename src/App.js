@@ -2,12 +2,12 @@ import "./App.scss";
 import { Switch, Route } from "react-router-dom";
 
 // Pages
-import Home from "./pages/Home";
-import Boards from "./pages/Boards";
-import DidNotFoundPage from "./pages/DidNotFoundPage";
+import Home from "./pages/Home.page";
+import Boards from "./pages/Board.page";
+import DidNotFoundPage from "./pages/DidNotFoundPage.page";
 
 // Components
-import Header from "./components/Header.component";
+import Header from "./components/common/Header/Header.component";
 
 const App = () => {
     return (
