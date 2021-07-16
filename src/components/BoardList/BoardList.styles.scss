@@ -1,6 +1,12 @@
 .board-page {
-    max-width: 1400px;
-    margin: 30px 40px 20px 80px;
+    max-width: 1300px;
+    margin: 30px auto 30px 80px;
+
+    .title-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .add-button {
         padding: 20px 60px;
@@ -8,14 +14,15 @@
 
     .board-list {
         display: flex;
+        align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin: 50px auto;
+        margin: 40px 50px 20px 250px;
         width: 73%;
     }
 
     .button-style {
         float: right;
-        margin-right: 30px;
+        margin-right: 50px;
     }
 }

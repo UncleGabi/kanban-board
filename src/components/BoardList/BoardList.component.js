@@ -6,9 +6,14 @@ import Button from "../common/Button/Button.component";
 import { getBoardStorage } from "../../assets/utils";
 
 import { useState, useEffect } from "react";
+import CreateBoardInput from "../CreateBoardInput/CreateBoardInput.component";
 
 const BoardList = () => {
     const [boards, setBoards] = useState([]);
+    const [created, setCreated] = useState(false);
+    const [text, setText] = useState("");
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
 
     useEffect(() => {
         try {
@@ -18,7 +23,7 @@ const BoardList = () => {
             };
             getBoardData();
         } catch (error) {
-            console.log(error.message);
+            console.log(error);
         }
     }, []);
 
@@ -26,25 +31,73 @@ const BoardList = () => {
         text: "New Board",
     };
 
-    const addHandler = () => {
-        const newData = {
-            id: boards.length + 1,
-            name: `Project ${boards.length + 1}`,
-            date: "2021.07.31",
-        };
+    const autoFocus = () => document.querySelector("input").focus();
 
-        setBoards([...boards, newData]);
+    const handleCreate = () => {
+        setCreated(!created);
+    };
+
+    const handleSave = () => {
+        const boardName = text;
+        const date = String(new Date().toLocaleDateString());
+        let newData = {
+            id: boards.length + 1,
+            name: boardName,
+            date,
+        };
+        const { name } = newData;
+
+        if (!name) {
+            setError("Board name is required");
+            autoFocus();
+        } else if (name.length > 30) {
+            setError("Only 30 characters allowed");
+            autoFocus();
+        } else {
+            setSuccess("Success!");
+            setTimeout(() => {
+                setBoards([...boards, newData]);
+                setCreated(!created);
+                setSuccess("");
+                setError("");
+                setText("");
+            }, 850);
+        }
+    };
+
+    const handleTyping = (e) => {
+        let { value } = e.target;
+        setText(value);
+
+        if (value.length > 30) {
+            setError("Only 30 characters allowed");
+        } else {
+            setError("");
+        }
     };
 
     return (
         <div className="board-page">
-            <h1>My Boards</h1>
+            <div className="title-section">
+                <h1>My Boards</h1>
 
-            <Button
-                handleClick={addHandler}
-                classes="button-style"
-                text={buttonProperties.text}
-            />
+                {created ? (
+                    <CreateBoardInput
+                        className="button-style"
+                        handleTyping={handleTyping}
+                        handleSave={handleSave}
+                        text={text}
+                        success={success}
+                        error={error}
+                    />
+                ) : (
+                    <Button
+                        handleClick={handleCreate}
+                        classes="button-style"
+                        text={buttonProperties.text}
+                    />
+                )}
+            </div>
 
             <div className="board-list">
                 {boards &&

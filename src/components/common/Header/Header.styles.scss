@@ -1,7 +1,9 @@
+@import "../../../assets/style-elements.scss";
+
 .header {
     width: 100%;
     height: 50px;
-    background-color: #2460a7ff;
+    background-color: $main-color;
     display: flex;
     align-items: center;
     position: relative;
