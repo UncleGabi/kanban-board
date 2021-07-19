@@ -1,14 +1,12 @@
 import "./BoardCard.styles.scss";
 import PropTypes from "prop-types";
-import { BiCalendarPlus } from "react-icons/bi";
 
 const BoardCard = ({ name, date }) => {
     return (
         <div className="board-card">
-            <h3>§</h3>
-            <h2>{name}</h2>
+            <h3>{name}</h3>
             <p>
-                <BiCalendarPlus size={20} className="calendar" /> {date}
+                <span>created on </span> {date}
             </p>
         </div>
     );

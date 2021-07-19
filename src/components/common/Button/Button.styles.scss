@@ -5,13 +5,12 @@
     background-color: $main-color;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: $border-radius;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
 
     &:active {
-        background-color: white;
-        color: $main-color;
+        transform: scale(0.85);
     }
 }
