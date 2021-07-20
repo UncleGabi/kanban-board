@@ -6,7 +6,6 @@ import { useState, useContext } from "react";
 import Button from "../common/Button/Button.component";
 import { BoardContext } from "../../contexts/BoardData.context";
 
-// { boardList, newBoard }
 const CreateBoardInput = () => {
     const [created, setCreated] = useState(false);
     const [text, setText] = useState("");
@@ -67,9 +66,9 @@ const CreateBoardInput = () => {
     };
 
     return (
-        <div className="container">
+        <div>
             {created ? (
-                <div>
+                <div className="container">
                     <div className="form">
                         <input
                             id="board-name-input"
