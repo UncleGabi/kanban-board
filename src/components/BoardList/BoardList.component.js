@@ -1,50 +1,25 @@
 import "./BoardList.styles.scss";
 
 import BoardCard from "../BoardCard/BoardCard.component";
-import Button from "../common/Button/Button.component";
+import CreateBoardInput from "../CreateBoardInput/CreateBoardInput.component";
 
-import { getBoardStorage } from "../../assets/utils";
-
-import { useState, useEffect } from "react";
+import { BoardContext } from "../../contexts/BoardData.context";
+import { useContext } from "react";
 
 const BoardList = () => {
-    const [boards, setBoards] = useState([]);
-
-    useEffect(() => {
-        try {
-            const getBoardData = async () => {
-                const res = await JSON.parse(getBoardStorage());
-                setBoards(res);
-            };
-            getBoardData();
-        } catch (error) {
-            console.log(error.message);
-        }
-    }, []);
-
-    const buttonProperties = {
-        text: "New Board",
-    };
-
-    const addHandler = () => {
-        const newData = {
-            id: boards.length + 1,
-            name: `Project ${boards.length + 1}`,
-            date: "2021.07.31",
-        };
-
-        setBoards([...boards, newData]);
-    };
+    const { boards, setBoards } = useContext(BoardContext);
 
     return (
         <div className="board-page">
-            <h1>My Boards</h1>
+            <div className="title-section">
+                <h1>My Boards</h1>
 
-            <Button
-                handleClick={addHandler}
-                classes="button-style"
-                text={buttonProperties.text}
-            />
+                <CreateBoardInput
+                    className="button-style"
+                    boardList={boards}
+                    newBoard={setBoards}
+                />
+            </div>
 
             <div className="board-list">
                 {boards &&

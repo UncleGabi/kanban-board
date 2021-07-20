@@ -1,10 +1,16 @@
+@import "../../../assets/style-elements.scss";
+
 .button {
-    padding: 10px 25px;
-    background-color: #4169e1;
+    padding: 8px 15px;
+    background-color: $main-color;
     color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 16px;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+
+    &:active {
+        transform: scale(0.85);
+    }
 }

@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 const BoardCard = ({ name, date }) => {
     return (
         <div className="board-card">
-            <h2>{name}</h2>
-            <p>{date}</p>
+            <h3>{name}</h3>
+            <p>
+                <span>created on </span> {date}
+            </p>
         </div>
     );
 };
